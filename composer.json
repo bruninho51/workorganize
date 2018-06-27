@@ -1,0 +1,22 @@
+{
+    "name": "bruno/sistemaloginphp",
+    "authors": [
+        {
+            "name": "Bruno",
+            "email": "bruno.mendes51@hotmail.com"
+        }
+    ],
+    "require": {
+    
+    },
+    
+    "autoload": {
+        "psr-4": {
+            "config\\" : "",
+            "lib\\factory\\" : "lib/factory",
+            "controller\\" : "controller",
+            "helper\\" : "helper"
+        }
+    }
+    
+}

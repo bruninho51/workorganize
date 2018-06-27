@@ -1,0 +1,22 @@
+<?php
+    use lib\factory as factory;
+
+    //PEGA O LINK DO ARQUIVO CSS PASSADO PELO CONTROLADOR
+    if($linkCss)
+        $linkCss = factory\FactoryCss::css($linkCss);
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><?php echo (isset($title)) ? $title : 'System' ?></title>
+        <link rel="stylesheet" href="view/assets/css/principal.css?<?php echo time()?>">
+        <?php echo (isset($linkCss)) ? "<link rel=\"stylesheet\" href=\"{$linkCss}\">".PHP_EOL : '' ?>
+    </head>
+    <body>
+        <?php echo (isset($conteudo)) ? $conteudo : '' ?>
+        
+        <script src="js/principal.js"></script>
+    </body>
+</html>

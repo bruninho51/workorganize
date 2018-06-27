@@ -1,0 +1,40 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #68CD73;
+}
+#nav404{
+    height: 100px;
+    background-color: #357B9F;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+#nav404 img{
+    height: 90%;
+    margin-right: 20px;
+}
+#content{
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+    font-size: 32px;
+}
+#content input[type="button"]{
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+input[type="button"]{
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+}
+input[type="button"]:before{
+    content: "<br>";
+}

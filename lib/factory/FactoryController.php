@@ -47,6 +47,7 @@
             foreach($dir as $item){
                 if( $item == "{$nomeController}.php" ){
                     $existe = true;
+                    break;
                 }
             }
             

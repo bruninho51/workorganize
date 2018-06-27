@@ -14,8 +14,6 @@
     //INCLUI O AUTOLOAD DO COMPOSER
     include_once("vendor/autoload.php");
 
-    session_start();
-
     //RESGATA OBJETO DE CONFIGURAÇÕES DO SISTEMA
     $env = config\env::getInstance();
 

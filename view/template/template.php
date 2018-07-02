@@ -15,7 +15,16 @@
         <?php echo (isset($linkCss)) ? "<link rel=\"stylesheet\" href=\"{$linkCss}\">".PHP_EOL : '' ?>
     </head>
     <body>
-        <?php echo (isset($conteudo)) ? $conteudo : '' ?>
+        
+        <?php //CONDIÇÃO PARA COLOCAR O MENU NA PÁGINA, POIS TEM PÁGINAS, COMO A DE LOGIN, QUE NÃO PRECISAM DO MENU 
+        if( !isset($semMenu) || isset($semMenu) && $semMenu === false ):?>
+            <?php require_once("navbar.php")?>
+        <?php endif;?>
+        
+        
+        <?php //O CONTEÚDO DA PÁGINA VAI AQUI 
+        echo (isset($conteudo)) ? $conteudo : '' ?>
+        
         
         <script src="js/principal.js"></script>
     </body>

@@ -1,0 +1,22 @@
+.dcontainer{
+    margin: 10px;
+}
+.dgrafico{
+    background-color: antiquewhite; 
+    border: 1px dotted #000;
+    height: 300px;
+}
+.drow{
+    display: flex;
+    flex-wrap: wrap;
+}
+.drow:first-of-type .dgrafico{
+    width: 100%;
+}
+.drow:nth-of-type(2){
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.drow:nth-of-type(2) .dgrafico{
+    width: 49%;
+}

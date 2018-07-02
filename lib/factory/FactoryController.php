@@ -14,7 +14,7 @@
 
     class FactoryController{
         
-        public static function load($nomeController, $metodo = 'index', $dados = false){ 
+        public static function load($nomeController, $metodo = 'index', $dados = false, &$respostaCtl = false){ 
             $metodo = ($metodo == '') ? 'index' : $metodo;
             
             $env = config\env::getInstance(); //INSTÂNCIA DO SINGLETON RESPONSÁVEL PELAS CONFIGURAÇÕES
@@ -25,10 +25,9 @@
                 $controllerObj = new $class;
 
                 if($dados == false){
-                    @call_user_func( $controllerObj->$metodo() );
-
+                    @call_user_func_array( $controllerObj->$metodo(), array(&$respostaCtl) );
                 }else{
-                    call_user_func_array($controllerObj->$metodo(), $dados);
+                    call_user_func_array($controllerObj->$metodo(), array(&$dados, &$respostaCtl));
                 }
                 
                 return true;

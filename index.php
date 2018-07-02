@@ -11,11 +11,34 @@
     use helper\helper as helper; //helpers
     use lib\factory\FactoryController as controller; //load controller factory
 
+    //SESSÃO
+    session_start();
+
     //INCLUI O AUTOLOAD DO COMPOSER
     include_once("vendor/autoload.php");
 
     //RESGATA OBJETO DE CONFIGURAÇÕES DO SISTEMA
     $env = config\env::getInstance();
+    
+    /*
+    *--------------------------------------
+    *------ CUIDA DA SESSÃO DE LOGIN ------
+    *--------------------------------------
+    */
+
+    //VERIFICA SE MOD E ACT FOI PASSADO VIA POST
+    $condicaoGETURI = ( isset($_GET) && isset($_GET['mod']) && isset($_GET['act']) );
+    //CASO A REQUISIÇÃO SEJA PARA FAZER O LOGIN NO SITE...
+    if( $condicaoGETURI && $_GET['mod'] == 'Login' && $_GET['act'] == 'logar' ){
+        //CONTROLADOR DE LOGIN E ACT LOGAR SERÃO CARREGADOS
+        //(LOGAR É RESPONSÁVEL POR VALIDAR USUÁRIO E INICIAR SESSÃO)
+        controller::load($_GET['mod'], $_GET['act']);
+        
+    }
+
+    /*
+    *---------------------------------------
+    */
 
     //VARIÁVEIS QUE SERÃO USADAS PARA IDENTIFICAR SE A URI ESTÁ NOS PADRÕES
     $padraoUri = "/^\?mod\=[a-zA-Z]*\&act\=[a-zA-Z]*/";
@@ -26,7 +49,13 @@
         //http_response_code(404); //ERRO 404 É EMITIDO
         helper::erro404(); //ERRO 404 É EMITIDO
     }else{
-        if(isset($_SESSION)){
+        //VERIFICA SE $_GET EXISTE E NÃO ESTÁ VAZIO
+        $condicaoExisteGET = ( isset($_GET) && !empty($_GET) );
+        //CONDIÇÃO QUE AVALIA SE CONTROLLER A SER ACESSADO É O DE LOGIN E SE NÃO É O INDEX
+        $condicaoMetodosLoginCtl = $condicaoExisteGET && ( $_GET['mod'] == 'Login' && ($_GET['act'] != '' && $_GET['act'] != 'index') );
+        //SE SESSÃO EXISTIR OU SE CONTROLLER A SER ACESSADO É O DE LOGIN E ACT NÃO É O INDEX...
+        
+        if(isset($_SESSION) && !empty($_SESSION) || ( $condicaoMetodosLoginCtl ) ){
             $condicaoPaginaPrincipal = ( !isset($_GET) || empty($_GET)/* || !isset($_GET['mod']) || !isset($_GET['act'])*/ );
             //VERIFICA SE A PÁGINA A SER CARREGADA DEVE SER A PRINCIPAL...
             if( $condicaoPaginaPrincipal ){
@@ -45,6 +74,6 @@
             controller::load("Login");
         }
         
-    } 
+    }
 
 ?>

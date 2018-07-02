@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticIniteba204878a11ecdc7e667192852c096d
 {
     public static $prefixLengthsPsr4 = array (
+        'm' => 
+        array (
+            'model\\' => 6,
+        ),
         'l' => 
         array (
             'lib\\factory\\' => 12,
@@ -23,6 +27,10 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
     );
 
     public static $prefixDirsPsr4 = array (
+        'model\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/model',
+        ),
         'lib\\factory\\' => 
         array (
             0 => __DIR__ . '/../..' . '/lib/factory',
@@ -37,18 +45,22 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         ),
         'config\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/',
+            0 => __DIR__ . '/../..' . '/config',
         ),
     );
 
     public static $classMap = array (
-        'config\\env' => __DIR__ . '/../..' . '/env.php',
+        'config\\env' => __DIR__ . '/../..' . '/config/env.php',
         'controller\\Login' => __DIR__ . '/../..' . '/controller/Login.php',
         'controller\\Principal' => __DIR__ . '/../..' . '/controller/Principal.php',
         'helper\\helper' => __DIR__ . '/../..' . '/helper/helper.php',
         'lib\\factory\\FactoryController' => __DIR__ . '/../..' . '/lib/factory/FactoryController.php',
         'lib\\factory\\FactoryCss' => __DIR__ . '/../..' . '/lib/factory/FactoryCss.php',
+        'lib\\factory\\FactoryJS' => __DIR__ . '/../..' . '/lib/factory/FactoryJS.php',
+        'lib\\factory\\FactoryModel' => __DIR__ . '/../..' . '/lib/factory/FactoryModel.php',
         'lib\\factory\\FactoryView' => __DIR__ . '/../..' . '/lib/factory/FactoryView.php',
+        'model\\DB' => __DIR__ . '/../..' . '/model/DB.php',
+        'model\\UsuarioDAO' => __DIR__ . '/../..' . '/model/UsuarioDAO.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

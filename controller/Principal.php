@@ -4,10 +4,11 @@
 
     class Principal {
         
-        public function index(){
+        public function index(&$respostaCtl = false){
             $dados = array(
                 "title" => "Tela Principal",
-                "linkCss" => "principal"
+                "linkCss" => "dashboard",
+                
             );
 
             factory\FactoryView::view('vw_principal', $dados);

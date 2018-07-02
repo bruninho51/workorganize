@@ -12,10 +12,11 @@
     
     "autoload": {
         "psr-4": {
-            "config\\" : "",
+            "config\\" : "config",
             "lib\\factory\\" : "lib/factory",
             "controller\\" : "controller",
-            "helper\\" : "helper"
+            "helper\\" : "helper",
+            "model\\" : "model"
         }
     }
     

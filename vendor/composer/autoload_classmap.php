@@ -6,11 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'config\\env' => $baseDir . '/env.php',
+    'config\\env' => $baseDir . '/config/env.php',
     'controller\\Login' => $baseDir . '/controller/Login.php',
     'controller\\Principal' => $baseDir . '/controller/Principal.php',
     'helper\\helper' => $baseDir . '/helper/helper.php',
     'lib\\factory\\FactoryController' => $baseDir . '/lib/factory/FactoryController.php',
     'lib\\factory\\FactoryCss' => $baseDir . '/lib/factory/FactoryCss.php',
+    'lib\\factory\\FactoryJS' => $baseDir . '/lib/factory/FactoryJS.php',
+    'lib\\factory\\FactoryModel' => $baseDir . '/lib/factory/FactoryModel.php',
     'lib\\factory\\FactoryView' => $baseDir . '/lib/factory/FactoryView.php',
+    'model\\DB' => $baseDir . '/model/DB.php',
+    'model\\UsuarioDAO' => $baseDir . '/model/UsuarioDAO.php',
 );

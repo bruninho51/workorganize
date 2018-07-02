@@ -14,12 +14,6 @@
             $url = "{$_SERVER['HTTP_HOST']}/{$env->config['nomeProjeto']}/?mod={$mod}&act={$act}";
             return $url;
         }
-        
-        public static function highcharts(){
-            
-            <script src="https://code.highcharts.com/highcharts.src.js"></script>
-            
-        }
             
         
     }

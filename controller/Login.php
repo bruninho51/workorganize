@@ -63,6 +63,12 @@
             return false;
             
         }
+        
+        public function logoof()
+        {
+            session_destroy();
+            header("location: ?mod=Login&act=");
+        }
      
         
     }

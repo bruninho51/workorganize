@@ -10,7 +10,7 @@
     </div>
     <div id="navParte2">
         <ul>
-            <li><a href="#">Logoff</a></li>
+            <li><a href='<?php echo "/{$env->config['nomeProjeto']}/?mod=Login&act=logoof"?>'>Logoff</a></li>
         </ul>
     </div>
     

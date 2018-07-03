@@ -32,7 +32,13 @@
     if( $condicaoGETURI && $_GET['mod'] == 'Login' && $_GET['act'] == 'logar' ){
         //CONTROLADOR DE LOGIN E ACT LOGAR SERÃO CARREGADOS
         //(LOGAR É RESPONSÁVEL POR VALIDAR USUÁRIO E INICIAR SESSÃO)
-        controller::load($_GET['mod'], $_GET['act']);
+        $respostaCtl = '';
+        controller::load($_GET['mod'], $_GET['act'], false, $respostaCtl);
+        
+        if($respostaCtl === false){
+            $_GET['act'] = '';
+            
+        }
         
     }
 

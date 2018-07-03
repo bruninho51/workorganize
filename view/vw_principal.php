@@ -14,32 +14,30 @@
 
 <script>
     Highcharts.chart('dgrafico1', {
+        credits: {
+            text: 'WorkOrganize',  
+            href: '#',
+            style: 'font-size: 12px;',
+        },
         chart: {
             type: 'column',
         },
         title: {
-            text: 'Gráfico do Bruno'
+            text: 'Trabalho por Usuário'
         },
         subtitle: {
-            text: 'Gráfico do Bruno'
+            text: 'Quantidade de trabalho por usuário'
         },
         xAxis: {
             categories: [
-                'Jan',
-                'Feb',
-                'Mar',
-                'Apr',
-                'May',
-                'Jun',
-                'Jul',
-                'Aug',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dec'
+                <?php //INSERINDO AS CATEGORIAS ATRAVÉS DO PHP 
+                foreach($dadosGraficoTrabalhoUsuario as $row): ?>
+                        <?php echo "'{$row['usuario']}',"; ?>
+                <?php endforeach;?>
+                
             ],
             //EFEITO HOVER QUANDO PASSA O MOUSE EM CIMA DE CADA CATEGORIA
-            crosshair: true
+            crosshair: false
         },
         yAxis: {
             //VALOR MÍNIMO PARA O EIXO DAS ORDENADAS(Y)
@@ -52,7 +50,7 @@
             //CONFIGURAÇÕES DO CABEÇARIO, CORPO E RODAPÉ DO TOOLTIP
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                '<td style="padding:0"><b>{point.y:.0f}</b></td></tr>',
             footerFormat: '</table>',
             //PERMITE 1 TOOLTIP PARA TODAS AS SÉRIES DE UMA CATEGORIA
             shared: true,
@@ -62,26 +60,20 @@
         //CONFIGURAÇÕES PARA CADA TIPO DE SÉRIE
         plotOptions: {
             column: {
-                pointPadding: 0.08,
+                pointPadding: 0,
                 borderWidth: 1
             }
         },
         //VALORES DO GRÁFICO
         series: [{
-            name: 'Tokyo',
-            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-
-        }, {
-            name: 'New York',
-            data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
-
-        }, {
-            name: 'London',
-            data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
-
-        }, {
-            name: 'Berlin',
-            data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+            color: '#3A2F0B',
+            name: 'Quantidade de Trabalho',
+            data: [
+                <?php //INSERINDO A QUANTIDADE DE TRABALHO ATRAVÉS DO PHP 
+                foreach($dadosGraficoTrabalhoUsuario as $row): ?>
+                        <?php echo "{$row['qtdeTrabalho']},"; ?>
+                <?php endforeach;?>
+            ]
 
         }]
     });

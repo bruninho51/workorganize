@@ -22,7 +22,8 @@ body{
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    background-color: #0B1721;
+    /*background-color: #0B1721;*/
+    background-color: #1A204E;
     color: white;
     padding-left: 10px;
     padding-right: 10px;
@@ -35,6 +36,14 @@ body{
 #navPrincipal ul li{
     display: inline;
     padding-left: 15px;
+}
+#navPrincipal a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+#navPrincipal a:hover{
+    color: cadetblue;
 }
 #navParte1, #navParte2{
     display: flex;

@@ -1,6 +1,6 @@
 <nav id="navPrincipal">
     <div id="navParte1">
-        <h1><img src="#" alt="logo"></h1>
+        <h1><img src="#" alt="WorkOrganize"></h1>
         <ul>
             <li><a href="#">Link 1</a></li>
             <li><a href="#">Link 2</a></li>

@@ -54,12 +54,14 @@
                     session_start();
                     $_SESSION['usuario'] = $usuario;
                     header("location: /{$env->config['nomeProjeto']}/?mod=Principal&act=");
+                    $respostaCtl = true;
                     return true;
                     
                 }
                 
             }
-            
+            //MUDA ACT PASSADO VIA GET PARA STRING VAZIA, POIS DESSA FORMA, O PROGRAMA IRÁ PARAR NA TELA DE LOGIN, VISTO QUE MOD VALE LOGIN
+            $_GET['act'] = '';
             return false;
             
         }

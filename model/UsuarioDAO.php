@@ -7,9 +7,9 @@
         
         public function get($usuario = false){
             $sql = "SELECT * FROM usuario";
-            if($usuario){
+            
+            if($usuario)
                 $sql .= " WHERE usuario = '{$usuario}'";
-            }
             
             //EXECUTA SQL USANDO SINGLETON DB
             $res = DB::rescue()->execute($sql);

@@ -4,8 +4,9 @@
     <div id="lContainer">
         <form action="?mod=Login&act=logar" method="POST" name="fmLogin">
             <div class="lrow" id="lMarca">
-                <h1>
-                    <img src="view/assets/img/workorganize.png" alt="marca" id="lMarcaImg">
+                <h1 id="h1Marca">
+                    WorkOrganize
+                    <!--<img src="view/assets/img/workorganize.png" alt="marca" id="lMarcaImg">-->
                 </h1>
                 <h2 id="lmarcaTitulo"></h2>
             </div>
@@ -18,16 +19,19 @@
             </div>
             <div class="lrow">
                 <input type="checkbox" id="lLembreme" value="remember" name="lembreme">
-                <label for="lembreme">Lembre-me</label>
+                <label for="lLembreme" id="lembreme">Lembre-me</label>
             </div>
             <div class="lrow">
-                <input id="lLogar" type="button" value="LOGIN" onclick="logar.call(this)">
+                <input id="lLogar" type="submit" value="LOGIN" onclick="logar.call(this)">
             </div>
 
-            <div class="lrow">
+            <div class="lrow links">
                 <a id="lRegistrar" href="#">Registre-se Agora</a>
                 <a id="lEsqueceuSenha" href="#">Esqueceu a senha?</a>
             </div>
+            <?php if( isset($_POST) && isset($_POST['usuario']) ): ?>
+                <div class="lrow erro" style="font-size: small;color: red;font-weight:bold;">Usuário ou senha inválidos!</div>
+            <?php endif;?>
         </form>
     </div>
 </div>

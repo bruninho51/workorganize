@@ -20,3 +20,8 @@
 .drow:nth-of-type(2) .dgrafico{
     width: 49%;
 }
+.dgrafico{
+    display:flex;
+    align-items: center;
+    justify-content: center;   
+}

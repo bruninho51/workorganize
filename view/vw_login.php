@@ -8,7 +8,7 @@
                     WorkOrganize
                     <!--<img src="view/assets/img/workorganize.png" alt="marca" id="lMarcaImg">-->
                 </h1>
-                <h2 id="lmarcaTitulo"></h2>
+                <h2 id="lmarcaSlogan">Trabalho é com a gente</h2>
             </div>
 
             <div class="lrow">

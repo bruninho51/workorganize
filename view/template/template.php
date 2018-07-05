@@ -16,7 +16,8 @@
     </head>
     <body>
         
-        <?php //CONDIÇÃO PARA COLOCAR O MENU NA PÁGINA, POIS TEM PÁGINAS, COMO A DE LOGIN, QUE NÃO PRECISAM DO MENU 
+        <?php //CONDIÇÃO PARA COLOCAR O MENU NA PÁGINA, POIS TEM PÁGINAS, COMO A DE LOGIN,
+        // QUE NÃO PRECISAM DO MENU
         if( !isset($semMenu) || isset($semMenu) && $semMenu === false ):?>
             <?php require_once("navbar.php")?>
         <?php endif;?>

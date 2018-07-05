@@ -11,6 +11,8 @@
     use helper\helper as helper; //helpers
     use lib\factory\FactoryController as controller; //load controller factory
 
+    ini_set('DISPLAY_ERRORS', true);
+
     //SESSÃO
     session_start();
 

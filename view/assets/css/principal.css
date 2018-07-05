@@ -19,6 +19,9 @@ body{
 
 /*--- CSS DA NAVABAR DE TEMPLATE ---*/
 #navPrincipal{
+    position: relative;
+}
+#navPrincipal #menuPrincipal{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -28,7 +31,7 @@ body{
     color: white;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
 }
 #navPrincipal ul{
     list-style: none;
@@ -49,4 +52,15 @@ body{
 #navParte1, #navParte2{
     display: flex;
     align-items: center;
+}
+/*--- CSS DO SUBMENU DE TEMPLATE ---*/
+#submenuPrincipal{
+    background-color: #1A204E;
+    width: 100%;
+    padding: 50px;
+    min-height: 300px;
+    position: absolute;
+    display: none;
+    z-index: 4;
+    border-top: 1px solid #fff;
 }

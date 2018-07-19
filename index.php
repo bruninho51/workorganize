@@ -10,8 +10,14 @@
     use config as config; //configurações da aplicação
     use helper\helper as helper; //helpers
     use lib\factory\FactoryController as controller; //load controller factory
-
-    ini_set('DISPLAY_ERRORS', true);
+    if( isset( $_GET['cpTest'] ) && $_GET['cpTest'] == true ){
+        ini_set('DISPLAY_ERRORS', true);
+        error_reporting(E_ALL);
+    }else{
+        ini_set('DISPLAY_ERRORS', false);
+        error_reporting(null);
+    }
+    
 
     //SESSÃO
     session_start();

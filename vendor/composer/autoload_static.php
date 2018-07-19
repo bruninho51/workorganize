@@ -15,6 +15,10 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         array (
             'lib\\factory\\' => 12,
         ),
+        'i' => 
+        array (
+            'interfaces\\' => 11,
+        ),
         'h' => 
         array (
             'helper\\' => 7,
@@ -35,6 +39,10 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         array (
             0 => __DIR__ . '/../..' . '/lib/factory',
         ),
+        'interfaces\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/interfaces',
+        ),
         'helper\\' => 
         array (
             0 => __DIR__ . '/../..' . '/helper',
@@ -54,12 +62,15 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         'controller\\Login' => __DIR__ . '/../..' . '/controller/Login.php',
         'controller\\Principal' => __DIR__ . '/../..' . '/controller/Principal.php',
         'helper\\helper' => __DIR__ . '/../..' . '/helper/helper.php',
+        'interfaces\\iModel' => __DIR__ . '/../..' . '/interfaces/iModel.php',
         'lib\\factory\\FactoryController' => __DIR__ . '/../..' . '/lib/factory/FactoryController.php',
         'lib\\factory\\FactoryCss' => __DIR__ . '/../..' . '/lib/factory/FactoryCss.php',
         'lib\\factory\\FactoryJS' => __DIR__ . '/../..' . '/lib/factory/FactoryJS.php',
         'lib\\factory\\FactoryModel' => __DIR__ . '/../..' . '/lib/factory/FactoryModel.php',
         'lib\\factory\\FactoryView' => __DIR__ . '/../..' . '/lib/factory/FactoryView.php',
+        'model\\AbstractModel' => __DIR__ . '/../..' . '/model/AbstractModel.php',
         'model\\DB' => __DIR__ . '/../..' . '/model/DB.php',
+        'model\\DashboardDAO' => __DIR__ . '/../..' . '/model/DashboardDAO.php',
         'model\\UsuarioDAO' => __DIR__ . '/../..' . '/model/UsuarioDAO.php',
     );
 

@@ -21,6 +21,8 @@ CREATE TABLE trabalho(
     descricao TEXT NOT NULL,
     dataInicio DATE NOT NULL,
     dataFim DATE NOT NULL,
+    dataTermino DATE,
+    realizado INTEGER NOT NULL,
     idUsuario VARCHAR(30) NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY(idUsuario) REFERENCES usuario(usuario)
@@ -49,4 +51,30 @@ CREATE TABLE anexoAnotacao(
     PRIMARY KEY(id),
     FOREIGN KEY(idAnotacaoTrabalho) REFERENCES anotacaoTrabalho(id)
     
+);
+CREATE TABLE modulo(
+	id INTEGER AUTO_INCREMENT NOT NULL,
+    modulo VARCHAR(100) NOT NULL,
+    act VARCHAR(100),
+    descricao TEXT NOT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE tipoPerfilModulo(
+	id INTEGER AUTO_INCREMENT NOT NULL,
+    idTipoPerfil INTEGER NOT NULL,
+    idModulo INTEGER NOT NULL,
+    PRIMARY KEY(id),
+    CONSTRAINT tipoPerfil FOREIGN KEY(idTipoPerfil) REFERENCES tipoPerfil(id),
+    CONSTRAINT modulo FOREIGN KEY(idModulo) REFERENCES modulo(id)
+);
+
+CREATE TABLE menu(
+	id INTEGER AUTO_INCREMENT NOT NULL,
+    idModulo INTEGER NOT NULL,
+    idMenuPai INTEGER NOT NULL,
+    titulo VARCHAR(50) NOT NULL,
+    ativo INTEGER NOT NULL,
+    PRIMARY KEY(id),
+    CONSTRAINT ctModulo FOREIGN KEY(idModulo) REFERENCES modulo(id)
 );

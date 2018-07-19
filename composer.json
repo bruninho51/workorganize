@@ -1,5 +1,5 @@
 {
-    "name": "bruno/sistemaloginphp",
+    "name": "bruno/workorganize",
     "authors": [
         {
             "name": "Bruno",
@@ -16,7 +16,8 @@
             "lib\\factory\\" : "lib/factory",
             "controller\\" : "controller",
             "helper\\" : "helper",
-            "model\\" : "model"
+            "model\\" : "model",
+            "interfaces\\" : "interfaces"
         }
     }
     

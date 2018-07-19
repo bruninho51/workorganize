@@ -27,7 +27,7 @@
                 if($dados == false){
                     @call_user_func_array( $controllerObj->$metodo(), array(&$respostaCtl) );
                 }else{
-                    call_user_func_array($controllerObj->$metodo(), array(&$dados, &$respostaCtl));
+                    @call_user_func_array($controllerObj->$metodo(), array(&$dados, &$respostaCtl));
                 }
                 
                 return true;

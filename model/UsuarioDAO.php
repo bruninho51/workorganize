@@ -3,9 +3,19 @@
 
     use config as config;
 
-    class UsuarioDAO{
+    class UsuarioDAO extends AbstractModel
+    {
+        public const TABELA = 'usuario';
+        private $campos;
+        protected $DB;
         
-        public function get($usuario = false){
+        public function __get($propriedade)
+        {
+            return $this->$propriedade;
+        }
+        
+        public function get($usuario = false)
+        {
             $sql = "SELECT * FROM usuario";
             
             if($usuario)
@@ -19,7 +29,8 @@
             
         }
         
-        public function existeUsuario($usuario){
+        public function existeUsuario($usuario)
+        {
             $res = $this->get($usuario);
             if( $res->num_rows == 1 ){
                 return $res->fetch_assoc();

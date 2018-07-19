@@ -14,9 +14,10 @@
 
     class FactoryModel{
         public static function build($model){
-             $env = config\env::getInstance(); //INSTÂNCIA DO SINGLETON RESPONSÁVEL PELAS CONFIGURAÇÕES
-             $class = "\\model\\{$model}";
-             $obj = new $class;
+            $env = config\env::getInstance(); //INSTÂNCIA DO SINGLETON RESPONSÁVEL PELAS CONFIGURAÇÕES
+            $class = "\\model\\{$model}";
+            
+            $obj = new $class;     
             
             return $obj;
         }

@@ -2,6 +2,7 @@
     namespace controller;
     use lib\factory as factory;
     use lib\factory\FactoryModel as fModel;
+    use model\DB as DB;
 
     class Principal {
         
@@ -28,11 +29,8 @@
                 array_push($dadosGraficoTrabalhoRealizadoNaoRealizado, $row);
             }
             
-            //PERCORRERÁ RESPOSTA USANDO FETCH_ASSOC() -- TERCEIRO GRÁFICO
-            $res = $DashboardDAO->getTrabalhoRealizadoUsuario70Dias();
-            while( $row = $res->fetch_assoc() ){
-                array_push($dadosGraficoTrabalhoRealizadoUsuario70Dias, $row);
-            }
+            //DADOS -- TERCEIRO GRÁFICO
+            $getTrabalhoRealizadoUltimos12Meses = $DashboardDAO->getTrabalhoRealizadoUltimos12Meses();
             
             
             //DADOS QUE SERÃO ENCAMINHADOS PARA A VIEW
@@ -41,7 +39,7 @@
                 "linkCss" => "dashboard",
                 "dadosGraficoTrabalhoUsuario" => $dadosGraficoTrabalhoUsuario,
                 "dadosGraficoTrabalhoRealizadoNaoRealizado" => $dadosGraficoTrabalhoRealizadoNaoRealizado,
-                "dadosGraficoTrabalhoRealizadoUsuario70Dias" => $dadosGraficoTrabalhoRealizadoUsuario70Dias
+                "getTrabalhoRealizadoUltimos12Meses" => $getTrabalhoRealizadoUltimos12Meses
             );
 
             factory\FactoryView::view('vw_principal', $dados);

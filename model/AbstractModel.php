@@ -3,46 +3,48 @@
 
     use \model\DB;
 
-    abstract class AbstractModel
+    abstract class AbstractModel implements \interfaces\iModel
     {
         
         protected $DB;
+        protected $CRUD;
         
         protected function __construct(){
             $this->DB = DB::rescue();
+            $this->CRUD = new CRUD();
             
         }
         
         public function select($campos = '*'){
-            $this->DB->select($this->tabela, $campos);
+            $this->CRUD->select($this->tabela, $campos);
         }
         public function update($campos, $valores){
-            $this->DB->update($this->tabela, $campos, $valores);
+            $this->CRUD->update($this->tabela, $campos, $valores);
         }
         public function insert($campos, $valores){
-            $this->DB->insert($this->tabela, $campos, $valores);
+            $this->CRUD->insert($this->tabela, $campos, $valores);
         }
         public function where($campo, $operador, $valor){
-            $this->DB->where($this->tabela, $campo, $operador, $valor);
+            $this->CRUD->where($this->tabela, $campo, $operador, $valor);
         }
         public function whereIn($campo, $valores){
-            $this->DB->whereIn($this->tabela, $campo, $valores);
+            $this->CRUD->whereIn($this->tabela, $campo, $valores);
         }
         public function clear(){
-            $this->DB->clear();
+            $this->CRUD->clear();
         }
         public function groupBy($campo){
-            $this->DB->groupBy(null, $campo);
+            $this->CRUD->groupBy(null, $campo);
         }
         public function orderBy($campo, $ordenacao = "ASC"){
-            $this->DB->orderBy(null, $campo, $ordenacao);
+            $this->CRUD->orderBy(null, $campo, $ordenacao);
         }
         public function sql(){
-            return $this->DB->sql();
+            return $this->CRUD->sql();
         }
         
         public function execute($sql = false){
-            return $this->DB->execute($sql);
+            return $this->CRUD->execute($sql);
         }
         
     }

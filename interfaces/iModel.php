@@ -2,14 +2,10 @@
     namespace interfaces;
 
     interface iModel
-    {
-        private $table;
-        private $campos;
-        protected $DB;
-        
+    {  
         public function select($campos = '*');
-        public function update();
-        public function insert();
+        public function update($campos, $valores);
+        public function insert($campos, $valores);
         //public function delete();
         public function where($campo, $operador, $valor);
         public function whereIn($campo, $valores);
@@ -21,7 +17,3 @@
         
         
     }
-
-
-
-?>

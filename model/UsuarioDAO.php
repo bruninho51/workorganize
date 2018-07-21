@@ -3,7 +3,8 @@
 
     use config as config;
 
-    class UsuarioDAO extends \model\AbstractModel{
+    class UsuarioDAO extends \model\AbstractModel
+    {
         const TABELA = 'usuario';
         private $campos;
         
@@ -44,5 +45,6 @@
                 return false;
             }
         }
-        
+       
+       
     }

@@ -17,7 +17,14 @@
             $env = config\env::getInstance(); //INSTÂNCIA DO SINGLETON RESPONSÁVEL PELAS CONFIGURAÇÕES
             $class = "\\model\\{$model}";
             
-            $obj = new $class();     
+           try{
+             $obj = new $class();
+           } catch (Exception $ex){
+               echo $ex->getMessage();
+               die();
+           }
+            
+            
             return $obj;
         }
     }

@@ -3,16 +3,20 @@
 
     use config as config;
 
-    class UsuarioDAO extends AbstractModel
-    {
-        public const TABELA = 'usuario';
+    class UsuarioDAO extends \model\AbstractModel{
+        const TABELA = 'usuario';
         private $campos;
-        protected $DB;
         
-        public function __get($propriedade)
+        public function __construct()
         {
-            return $this->$propriedade;
+            parent::__construct();
         }
+        //protected $DB;
+        
+        //public function __get($propriedade)
+        //{
+        //    return $this->$propriedade;
+        //}
         
         public function get($usuario = false)
         {
@@ -20,6 +24,7 @@
             
             if($usuario)
                 $sql .= " WHERE usuario = '{$usuario}'";
+            
             
             //EXECUTA SQL USANDO SINGLETON DB
             $res = DB::rescue()->execute($sql);
@@ -31,6 +36,7 @@
         
         public function existeUsuario($usuario)
         {
+            
             $res = $this->get($usuario);
             if( $res->num_rows == 1 ){
                 return $res->fetch_assoc();

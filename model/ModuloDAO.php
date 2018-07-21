@@ -1,7 +1,7 @@
 <?php
-    class ModuloDAO extends AbstractModel
+    class ModuloDAO extends \model\AbstractModel
     {
-        public const TABELA = 'modulo';
+        const TABELA = 'modulo';
         private $campos;
         protected $DB;
         

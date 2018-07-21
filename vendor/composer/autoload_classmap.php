@@ -19,5 +19,6 @@ return array(
     'model\\AbstractModel' => $baseDir . '/model/AbstractModel.php',
     'model\\DB' => $baseDir . '/model/DB.php',
     'model\\DashboardDAO' => $baseDir . '/model/DashboardDAO.php',
+    'model\\TrabalhoDAO' => $baseDir . '/model/TrabalhoDAO.php',
     'model\\UsuarioDAO' => $baseDir . '/model/UsuarioDAO.php',
 );

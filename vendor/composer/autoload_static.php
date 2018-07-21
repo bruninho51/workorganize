@@ -71,6 +71,7 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         'model\\AbstractModel' => __DIR__ . '/../..' . '/model/AbstractModel.php',
         'model\\DB' => __DIR__ . '/../..' . '/model/DB.php',
         'model\\DashboardDAO' => __DIR__ . '/../..' . '/model/DashboardDAO.php',
+        'model\\TrabalhoDAO' => __DIR__ . '/../..' . '/model/TrabalhoDAO.php',
         'model\\UsuarioDAO' => __DIR__ . '/../..' . '/model/UsuarioDAO.php',
     );
 

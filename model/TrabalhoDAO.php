@@ -3,9 +3,9 @@
     use config as config;
     use interfaces\iModel as iModel;
 
-    class TrabalhoDAO extends AbstractModel
+    class TrabalhoDAO extends \model\AbstractModel
     {
-        public const TABELA = 'trabalho';
+        const TABELA = 'trabalho';
         private $campos;
         protected $DB;
         

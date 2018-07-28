@@ -1,13 +1,14 @@
 <?php lib\factory\FactoryJS::js("subMenu")?>
+<?php $menus = unserialize($_SESSION['menu'])?>
 <nav id="navPrincipal">
     <div id="menuPrincipal">
         <div id="navParte1">
             <h1><img src="#" alt="WorkOrganize"></h1>
             <ul>
-                <li><a class="itemNavPart1" href="#">Link 1</a></li>
-                <li><a class="itemNavPart1" href="#">Link 2</a></li>
-                <li><a class="itemNavPart1" href="#">Link 3</a></li>
-                <li><a class="itemNavPart1" href="#">Link 4</a></li>
+                <?php foreach( $menus as $menu ) : ?>
+                <li><a class="itemNavPart1" id="m<?php echo $menu['idMenu']?>" href="<?php echo $menu['modulo']?>"><?php echo $menu['titulo']?></a></li>
+                <?php endforeach;?>
+                
             </ul>
         </div>
         <div id="navParte2">
@@ -18,7 +19,9 @@
     </div>    
     
     <div id="submenuPrincipal">
-        
+        <div id="submenuPrincipalFlex">
+            <?php \helper\helper::buildSubmenus($menus)?>
+        </div>
     </div>
 
     <script>

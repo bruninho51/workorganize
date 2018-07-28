@@ -13,6 +13,7 @@
         <title><?php echo (isset($title)) ? $title : 'System' ?></title>
         <link rel="stylesheet" href="view/assets/css/principal.css?<?php echo time()?>">
         <?php echo (isset($linkCss)) ? "<link rel=\"stylesheet\" href=\"{$linkCss}\">".PHP_EOL : '' ?>
+        <?php echo \lib\factory\FactoryJS::js("jquery-3.3.1.min")?>
     </head>
     <body>
         

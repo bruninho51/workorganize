@@ -8,6 +8,7 @@
         public function insert($campos, $valores);
         //public function delete();
         public function where($campo, $operador, $valor);
+        public function whereTable($tabela, $campo, $operador, $valor);
         public function whereIn($campo, $valores);
         public function clear();
         public function groupBy($campo);

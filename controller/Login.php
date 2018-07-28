@@ -3,6 +3,7 @@
     use lib\factory\FactoryView as fView;
     use lib\factory\FactoryJS as fJS;
     use lib\factory\FactoryModel as fModel;
+    use lib\factory\FactoryController as fController;
     use config as config;
     use helper as helper;
 
@@ -52,7 +53,13 @@
                 if( $dadosUsuario['senha'] == $senha ){
                     
                     session_start();
+                    
+                    $dadosMenu = "";
+                    fController::load('Menu', 'index', false, $dadosMenu);
+                    
                     $_SESSION['usuario'] = $usuario;
+                    $_SESSION['menu'] = serialize($dadosMenu);
+                   
                     header("location: /{$env->config['nomeProjeto']}/?mod=Principal&act=");
                     $respostaCtl = true;
                     return true;

@@ -37,7 +37,7 @@ body{
     list-style: none;
     padding-left: 0px;
 }
-#navPrincipal ul li{
+#menuPrincipal ul li{
     display: inline;
     padding-left: 15px;
 }
@@ -57,10 +57,21 @@ body{
 #submenuPrincipal{
     background-color: #1A204E;
     width: 100%;
-    padding: 50px;
-    min-height: 300px;
+    padding: 20px;
+    max-height: 300px;
     position: absolute;
     display: none;
     z-index: 4;
     border-top: 1px solid #fff;
+}
+#submenuPrincipalFlex{
+    max-height: 300px;
+    width: 100%;
+}
+#submenuPrincipal ul{
+    list-style: none;
+    padding-left: 0px;
+}
+.submenu{
+    display: none;
 }

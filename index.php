@@ -18,7 +18,6 @@
         error_reporting(null);
     }
     
-
     //SESSÃO
     session_start();
 

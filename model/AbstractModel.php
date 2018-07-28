@@ -8,6 +8,7 @@
         
         protected $DB;
         protected $CRUD;
+        protected $tabela;
         
         protected function __construct(){
             $this->DB = DB::rescue();
@@ -27,6 +28,9 @@
         public function where($campo, $operador, $valor){
             $this->CRUD->where($this->tabela, $campo, $operador, $valor);
         }
+        public function whereTable($tabela, $campo, $operador, $valor){
+            $this->CRUD->where($tabela, $campo, $operador, $valor);
+        }
         public function whereIn($campo, $valores){
             $this->CRUD->whereIn($this->tabela, $campo, $valores);
         }
@@ -44,7 +48,18 @@
         }
         
         public function execute($sql = false){
-            return $this->CRUD->execute($sql);
+            if( $sql && gettype($sql) === 'string' ){
+                return $this->DB->execute($sql);
+                
+            }else{ //$sql vale falso
+                return $this->DB->execute($this->CRUD);
+            }
+            
+        }
+        
+        public function innerJoin($tabela1, $campo1, $tabela2, $campo2)
+        {
+            $this->CRUD->innerJoin($tabela1, $campo1, $tabela2, $campo2);
         }
         
     }

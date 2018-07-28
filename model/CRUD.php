@@ -182,7 +182,7 @@
                 if( $this->join ){
                     $joins = "";
                     foreach( $this->join as $join ){
-                        $joins = "{$join} ";
+                        $joins .= "{$join} ";
                     }
 
                     $sql .= $joins;

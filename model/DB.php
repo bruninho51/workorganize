@@ -10,7 +10,7 @@
         private $dbsenha;
         private $dbbanco;
         private $mysqli;
-        private $query;
+        //private $query;
         public $crud;
         
         private function __wakeup(){}
@@ -23,6 +23,7 @@
             $dbsenha = $env->config['dbsenha'];
             $dbbanco = $env->config['dbbanco'];
             $this->mysqli = new \mysqli($host, $dbusuario, $dbsenha, $dbbanco);
+            $this->mysqli->set_charset('utf8');
             
             if( $this->mysqli === false ){
                 $nomeProjeto = config\env::getInstance()->config['nomeProjeto'];

@@ -15,7 +15,7 @@
         <div id="content">
             <h1>ERRO 404</h1>
             Sinto muito! A página que você está tentado acessar não foi encontrada! 
-            <input type="button" value="Ir à Página Principal">
+            <input type="button" value="Ir à Página Principal" onclick="window.location.href = '<?php echo 'http://' . $urlPrincipal?>'">
         </div>
         <script src="js/principal.js"></script>
     </body>

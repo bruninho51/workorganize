@@ -10,7 +10,6 @@
     namespace lib\factory;
 
     use config as config;
-    use controller as controller;
 
     class FactoryController{
         
@@ -25,9 +24,9 @@
                 $controllerObj = new $class;
 
                 if($dados == false){
-                    @call_user_func_array( $controllerObj->$metodo(), array(&$respostaCtl) );
+                    $controllerObj->$metodo($respostaCtl);
                 }else{
-                    @call_user_func_array($controllerObj->$metodo(), array(&$dados, &$respostaCtl));
+                    $controllerObj->$metodo($dados, $respostaCtl);
                 }
                 
                 return true;
@@ -38,7 +37,7 @@
             
         }
         
-        function controller_exists($nomeController){
+        private static function controller_exists($nomeController){
             $env = config\env::getInstance(); //INSTÂNCIA DO SINGLETON RESPONSÁVEL PELAS CONFIGURAÇÕES
             
             $dir = scandir("{$_SERVER['DOCUMENT_ROOT']}/{$env->config['nomeProjeto']}/controller/");
@@ -55,7 +54,7 @@
         }
         
         
-        function act_exists($nomeController, $metodo){
+        private static function act_exists($nomeController, $metodo){
             $class = "\\controller\\{$nomeController}";
             
             //SE MÉTODO EXISTIR NA CLASSE...

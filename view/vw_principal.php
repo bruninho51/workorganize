@@ -1,4 +1,5 @@
 <?php lib\factory\FactoryJS::js('highcharts/highcharts.src')?>
+<?php lib\factory\FactoryJS::js('highcharts/modules/drilldown')?>
 <div class="dcontainer">
     <h1 class="tituloPrincipal">Dashboard</h1>
 
@@ -11,6 +12,20 @@
     </div>
     
 </div>
+
+<script>
+    //OPÇÕES GLOBAIS DO HIGHCHARTS
+    Highcharts.setOptions ({
+         credits: {
+            text: 'WorkOrganize',  
+            href: '#',
+            style: 'font-size: 12px;',
+        },
+        lang: {
+            drillUpText: 'Voltar para {series.name}'
+        }
+    });
+</script>
 
 <script id="codeGrafico1">
     Highcharts.chart('dgrafico1', {
@@ -82,7 +97,6 @@
 </script>
 <script id="codeGrafico2">
 
-
     // Build the chart
     Highcharts.chart('dgrafico2', {
         credits: {
@@ -104,6 +118,7 @@
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
         },
         plotOptions: {
+            
             pie: {
                 allowPointSelect: true,
                 cursor: 'pointer',
@@ -120,11 +135,58 @@
         series: [{
             name: 'Porcentagem',
             data: [
-                { name: 'Realizadas', y: <?php echo $dadosGraficoTrabalhoRealizadoNaoRealizado[1]['qtde'];?> },
-                { name: 'Não Realizadas', y: <?php echo $dadosGraficoTrabalhoRealizadoNaoRealizado[0]['qtde'];?> }
+                { 
+                  name: 'Realizadas', 
+                  y: <?php echo $dadosGraficoTrabalhoRealizadoNaoRealizado[1]['qtde'];?>,
+                  drilldown: 'Chrome'
+                },
+                { 
+                    name: 'Não Realizadas', 
+                    y: <?php echo $dadosGraficoTrabalhoRealizadoNaoRealizado[0]['qtde'];?>,
+                    drilldown: 'Firefox'
+                }
             ]
-        }]
+        }],
+        "drilldown": {
+        "series": [
+            {
+                "name": "Chrome",
+                "id": "Chrome",
+                "data": [
+                    [
+                        "v65.0",
+                        0.1
+                    ],
+                    [
+                        "v64.0",
+                        1.3
+                    ],
+                    [
+                        "v63.0",
+                        53.02
+                    ]
+                ]},
+            {
+                "name": "Firefox",
+                "id": "Firefox",
+                "data": [
+                    [
+                        "v58.0",
+                        1.02
+                    ],
+                    [
+                        "v57.0",
+                        7.36
+                    ],
+                    [
+                        "v56.0",
+                        0.35
+                    ]
+                ]
+            }
+        ]}
     });
+    
 </script>
 
 <script id="codeGrafico3">

@@ -39,7 +39,7 @@
                 $html = "<div class='submenu' id='sm{$menu['idMenu']}'><ul>";
                 
                 foreach ( $menu['submenus'] as $submenu ) {
-                    $url = helper::URIAction($submenu['modulo'], $submenu['action']);
+                    $url = helper::URIAction($submenu['modulo'], $submenu['act']);
                 
                     
                     $html .= "<li>"

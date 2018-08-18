@@ -88,22 +88,24 @@ CREATE TABLE campos(
     descricao TEXT NOT NULL,
     PRIMARY KEY(idCampo)
 );
+CREATE TABLE formularioMenu(
+	idForm INTEGER NOT NULL,
+    idMenu INTEGER NOT NULL,
+    CONSTRAINT c_menu FOREIGN KEY(idMenu) REFERENCES menu(id),
+    descricao TEXT
+);
 CREATE TABLE formulario(
 	idFormulario INTEGER AUTO_INCREMENT,
-    modulo VARCHAR(100) NOT NULL,
+    menu INTEGER NOT NULL,
     act VARCHAR(100) NOT NULL,
     descricao TEXT NOT NULL,
+    CONSTRAINT ct_menu FOREIGN KEY(menu) REFERENCES formularioMenu(idMenu),
     PRIMARY KEY(idFormulario)
 );
 CREATE TABLE camposFormulario(
 	idFormulario INTEGER NOT NULL,
     idCampo INTEGER NOT NULL,
-    CONSTRAINT c_form FOREIGN KEY(idFormulario) REFERENCES formulario(idFormulario),
+    CONSTRAINT ct_form FOREIGN KEY(idFormulario) REFERENCES formulario(idFormulario),
     CONSTRAINT c_campo FOREIGN KEY(idCampo) REFERENCES campos(idCampo),
     PRIMARY KEY(idFormulario, idCampo)
-);
-CREATE TABLE formularioTabela(
-	idForm INTEGER NOT NULL,
-    tabela VARCHAR(25) NOT NULL,
-    descricao TEXT
 );

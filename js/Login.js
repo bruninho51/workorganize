@@ -1,5 +1,6 @@
 function logar(){
-   var inputlSenha = $('#lSenha');
+
+   var inputlSenha = document.fmLogin.senha;
    inputlSenha.value = (md5(inputlSenha.value)).toLowerCase();
    document.fmLogin.submit();
 }

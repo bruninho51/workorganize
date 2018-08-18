@@ -15,7 +15,8 @@
         
         public static function js($nomeArquivo){
             $env = config\env::getInstance();
-            $enderecoArquivo = "js/{$nomeArquivo}.js";
+            $tempo = time();
+            $enderecoArquivo = "js/{$nomeArquivo}.js?{$tempo}";
             echo "<script src='{$enderecoArquivo}'></script>".PHP_EOL;
             
         }

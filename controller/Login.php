@@ -26,7 +26,7 @@
                     "semMenu" => true
                 );
 
-                fView::view('vw_login', $dados);   
+                fView::view('vw_login', $dados);
             }
             
             

@@ -1,5 +1,6 @@
 <?php
     namespace controller;
+    use lib as lib;
     use lib\factory as factory;
     use lib\factory\FactoryModel as fModel;
     use model\DB as DB;

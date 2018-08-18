@@ -3,7 +3,7 @@
 <nav id="navPrincipal">
     <div id="menuPrincipal">
         <div id="navParte1">
-            <h1><img src="#" alt="WorkOrganize"></h1>
+            <h1><a href='/<?php echo $env->config['nomeProjeto']?>'><img src="#" alt="WorkOrganize"></a></h1>
             <ul>
                 <?php foreach( $menus as $menu ) : ?>
                 <li><a class="itemNavPart1" id="m<?php echo $menu['idMenu']?>" href="<?php echo $menu['modulo']?>"><?php echo $menu['titulo']?></a></li>

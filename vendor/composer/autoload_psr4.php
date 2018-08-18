@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'model\\' => array($baseDir . '/model'),
     'lib\\factory\\' => array($baseDir . '/lib/factory'),
+    'lib\\' => array($baseDir . '/lib'),
     'interfaces\\' => array($baseDir . '/interfaces'),
     'helper\\' => array($baseDir . '/helper'),
     'controller\\' => array($baseDir . '/controller'),

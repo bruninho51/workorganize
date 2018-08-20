@@ -97,7 +97,7 @@ CREATE TABLE formularioModulo(
 );
 CREATE TABLE formulario(
 	idFormulario INTEGER AUTO_INCREMENT,
-    modulo INTEGER NOT NULL,
+    titulo VARCHAR(50) NOT NULL,
     descricao TEXT NOT NULL,
     PRIMARY KEY(idFormulario)
 );

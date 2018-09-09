@@ -27,7 +27,6 @@
         <?php //O CONTEÚDO DA PÁGINA VAI AQUI 
         echo (isset($conteudo)) ? $conteudo : '' ?>
         
-        
         <script src="js/principal.js"></script>
     </body>
 </html>

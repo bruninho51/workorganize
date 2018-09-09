@@ -15,19 +15,26 @@
         
         public static function view($view, $dados, $template = 'template'){            
             $env = config\env::getInstance(); //INSTÂNCIA DO SINGLETON RESPONSÁVEL PELAS CONFIGURAÇÕES
-            
             //CRIA VARIÁVEIS PARA A VIEW
             foreach($dados as $nomeVar => $value){
                 $$nomeVar = $value;
             }
             //CRIA VARIÁVEL $conteudo CONTENDO A VIEW
-            ob_start();
-            include_once("{$_SERVER['DOCUMENT_ROOT']}/{$env->config["nomeProjeto"]}/view/{$view}.php");
-            $conteudo = ob_get_contents();
-            ob_end_clean();
+            if (!array_key_exists("conteudo", $dados)) {
+                ob_start();
+                include_once("{$_SERVER['DOCUMENT_ROOT']}/{$env->config["nomeProjeto"]}/view/{$view}.php");
+                $conteudo = ob_get_contents();
+                ob_end_clean();
+            }else{
+                $conteudo = $dados['conteudo'];
+            }
             
             //INCLUI TEMPLATE
-            include_once("{$_SERVER['DOCUMENT_ROOT']}/{$env->config["nomeProjeto"]}/view/template/{$template}.php");
+            if ($template != null) {
+                include_once("{$_SERVER['DOCUMENT_ROOT']}/{$env->config["nomeProjeto"]}/view/template/{$template}.php");
+            }else{
+                echo $conteudo;
+            }
             
         }
         

@@ -17,7 +17,7 @@
             return $this->$propriedade;
         }
         
-        private function __set($propriedade, $valor)
+        public function __set($propriedade, $valor)
         {
             $this->$propriedade = $valor;
             
@@ -84,7 +84,7 @@
         }
         public function where($tabela, $campo, $operador, $valor){
             if( gettype($valor) == 'string' && gettype($tabela) == 'string' && gettype($campo) == "string" ){
-                if( count($this->where) >= 1 ){
+                if( is_array($this->where) && count($this->where) >= 1 ){
                     $sql = " AND {$tabela}.{$campo} {$operador} {$valor}"; 
                 }else{
                     $sql = " WHERE {$tabela}.{$campo} {$operador} {$valor}";    

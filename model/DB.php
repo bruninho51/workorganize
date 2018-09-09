@@ -40,7 +40,7 @@
             }else if( gettype($sql) === 'object' && get_class($sql) === 'model\CRUD' ){
                 
                 $query = $sql->sql();
-                if( !query === false ){
+                if( !$query === false ){
                     $res = $this->mysqli->query($query);
                     $sql->clear();
                     return $res;    

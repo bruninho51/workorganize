@@ -1,9 +1,6 @@
 <?php
     namespace controller;
-    use lib\factory\FactoryView as fView;
-    use lib\factory\FactoryJS as fJS;
-    use lib\factory\FactoryModel as fModel;
-    use lib\factory\FactoryController as fController;
+    use lib\Call;
     use config as config;
     use helper as helper;
 
@@ -26,7 +23,7 @@
                     "semMenu" => true
                 );
 
-                fView::view('vw_login', $dados);
+                Call::view('vw_login', $dados);
             }
             
             
@@ -41,7 +38,7 @@
         {
             $env = config\env::getInstance();
             //CRIA OBJETO DA MODEL USANDO FACTORYMODEL
-            $usuarioDAO = fModel::build('UsuarioDAO');
+            $usuarioDAO = Call::model('UsuarioDAO');
             $usuario = $_POST['usuario'];
             $senha = $_POST['senha'];
             
@@ -55,7 +52,7 @@
                     session_start();
                     
                     $dadosMenu = "";
-                    fController::load('Menu', 'index', false, $dadosMenu);
+                    Call::controller('Menu', 'index', false, $dadosMenu);
                     
                     $_SESSION['usuario'] = $usuario;
                     $_SESSION['menu'] = serialize($dadosMenu);

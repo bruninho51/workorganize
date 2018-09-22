@@ -10,10 +10,9 @@
     namespace lib;
 
     use config as config;
-    use model as model;
     use model\DB as DB;
     use model\CRUD as CRUD;
-    use lib\factory\FactoryView as fView;
+    use lib\Call;
 
     
 
@@ -85,7 +84,7 @@
                     "campos" => $dadosForm
                 );
                 ob_start();
-                fview::view("template/templateForm", $dados, null);
+                Call::view("template/templateForm", $dados, null);
                 $form = ob_get_contents();
                 ob_end_clean();
                 return $form;

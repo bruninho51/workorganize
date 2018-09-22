@@ -7,9 +7,10 @@
 *
 * AUTOR: BRUNO MENDES PIMENTA
 */
+    use lib\Call;
     use config as config; //configurações da aplicação
     use helper\helper as helper; //helpers
-    use lib\factory\FactoryController as controller; //load controller factory
+    //use lib\factory\FactoryController as controller; //load controller factory
     if( isset( $_GET['cpTest'] ) && $_GET['cpTest'] == true ){
         ini_set('DISPLAY_ERRORS', true);
         error_reporting(E_ALL);
@@ -40,7 +41,7 @@
         //CONTROLADOR DE LOGIN E ACT LOGAR SERÃO CARREGADOS
         //(LOGAR É RESPONSÁVEL POR VALIDAR USUÁRIO E INICIAR SESSÃO)
         $respostaCtl = '';
-        controller::load($_GET['mod'], $_GET['act'], false, $respostaCtl);
+        Call::controller($_GET['mod'], $_GET['act'], false, $respostaCtl);
         
         if($respostaCtl === false){
             $_GET['act'] = '';
@@ -73,18 +74,18 @@
             //VERIFICA SE A PÁGINA A SER CARREGADA DEVE SER A PRINCIPAL...
             if( $condicaoPaginaPrincipal ){
                 //echo 'controler principal ainda não existe';
-                controller::load("Principal");
+                Call::controller("Principal");
             //CASO NÃO SEJA, CONTROLADOR E ACTION PASSADOS SERÃO CARREGADOS...    
             }else{
                 //CASO O load RETORNE FALSO POR CONTA DO CONTROLLER OU ACTION NÃO EXISTIR...
-                if( !controller::load($_GET['mod'], $_GET['act']) ){
+                if( !Call::controller($_GET['mod'], $_GET['act']) ){
                     //return http_response_code(404); //ERRO 404 É EMITIDO
                     helper::erro404(); //ERRO 404 É EMITIDO
                 }    
 
             }    
         }else{
-            controller::load("Login");
+            Call::controller("Login");
         }
         
     }

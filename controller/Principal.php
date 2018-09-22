@@ -1,15 +1,14 @@
 <?php
     namespace controller;
     use lib as lib;
-    use lib\factory as factory;
-    use lib\factory\FactoryModel as fModel;
+    use lib\Call;
     use model\DB as DB;
 
     class Principal {
         
         public function index(&$respostaCtl = false){
             
-            $DashboardDAO = fModel::build('DashboardDAO');
+            $DashboardDAO = Call::model('DashboardDAO');
             
             //CONTERÁ DADOS PARA O PRIMEIRO GRÁFICO
             $dadosGraficoTrabalhoUsuario = [];
@@ -43,7 +42,7 @@
                 "getTrabalhoRealizadoUltimos12Meses" => $getTrabalhoRealizadoUltimos12Meses
             );
 
-            factory\FactoryView::view('vw_principal', $dados);
+            Call::view('vw_principal', $dados);
             
         }
      

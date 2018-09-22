@@ -1,7 +1,7 @@
 <?php
     namespace controller;
-    use lib\factory\FactoryView as fView;
     use lib\Formulario;
+    use lib\Call;
 
     class Trabalho
     {
@@ -22,7 +22,7 @@
                 "campos" => $frm->getForms(1)
              );
 
-            fview::view('vw_addTrabalho', $dados);
+            Call::view('vw_addTrabalho', $dados);
             
         }
     }

@@ -1,13 +1,13 @@
 <?php
 namespace controller;
-    use lib\factory\FactoryModel as fModel;
+    use lib\Call;
 
     class Menu 
     {
         
         public function index(&$respostaCtl = false)
         {
-            $menu = fModel::build('MenuDAO');
+            $menu = Call::model('MenuDAO');
             $dados = $menu->getMenus("1");
             
             while( $menu = $dados->fetch_assoc() ){

@@ -795,6 +795,7 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         'controller\\Trabalho' => __DIR__ . '/../..' . '/controller/Trabalho.php',
         'helper\\helper' => __DIR__ . '/../..' . '/helper/helper.php',
         'interfaces\\iModel' => __DIR__ . '/../..' . '/interfaces/iModel.php',
+        'lib\\Call' => __DIR__ . '/../..' . '/lib/factory/Call.php',
         'lib\\Formulario' => __DIR__ . '/../..' . '/lib/Formulario.php',
         'lib\\factory\\FactoryController' => __DIR__ . '/../..' . '/lib/factory/FactoryController.php',
         'lib\\factory\\FactoryCss' => __DIR__ . '/../..' . '/lib/factory/FactoryCss.php',

@@ -1,9 +1,9 @@
 <?php
-    use lib\factory as factory;
+    use lib\Call;
 
     //PEGA O LINK DO ARQUIVO CSS PASSADO PELO CONTROLADOR
     if($linkCss)
-        $linkCss = factory\FactoryCss::css($linkCss);
+        $linkCss = Call::css($linkCss);
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
         <title><?php echo (isset($title)) ? $title : 'System' ?></title>
         <link rel="stylesheet" href="view/assets/css/principal.css?<?php echo time()?>">
         <?php echo (isset($linkCss)) ? "<link rel=\"stylesheet\" href=\"{$linkCss}\">".PHP_EOL : '' ?>
-        <?php echo \lib\factory\FactoryJS::js("jquery-3.3.1.min")?>
+        <?php echo Call::js("jquery-3.3.1.min")?>
     </head>
     <body>
         

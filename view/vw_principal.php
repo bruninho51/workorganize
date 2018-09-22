@@ -1,5 +1,6 @@
-<?php lib\factory\FactoryJS::js('highcharts/highcharts.src')?>
-<?php lib\factory\FactoryJS::js('highcharts/modules/drilldown')?>
+<?php use lib\Call;?>
+<?php Call::js('highcharts/highcharts.src')?>
+<?php Call::js('highcharts/modules/drilldown')?>
 <div class="dcontainer">
     <h1 class="tituloPrincipal">Dashboard</h1>
 

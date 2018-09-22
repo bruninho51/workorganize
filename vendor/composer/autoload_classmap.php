@@ -628,6 +628,7 @@ return array(
     'controller\\Trabalho' => $baseDir . '/controller/Trabalho.php',
     'helper\\helper' => $baseDir . '/helper/helper.php',
     'interfaces\\iModel' => $baseDir . '/interfaces/iModel.php',
+    'lib\\Call' => $baseDir . '/lib/factory/Call.php',
     'lib\\Formulario' => $baseDir . '/lib/Formulario.php',
     'lib\\factory\\FactoryController' => $baseDir . '/lib/factory/FactoryController.php',
     'lib\\factory\\FactoryCss' => $baseDir . '/lib/factory/FactoryCss.php',

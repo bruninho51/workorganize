@@ -1,4 +1,5 @@
-<?php lib\factory\FactoryJS::js("subMenu")?>
+<?php use lib\Call;?>
+<?php Call::js("subMenu")?>
 <?php $menus = unserialize($_SESSION['menu'])?>
 <nav id="navPrincipal">
     <div id="menuPrincipal">

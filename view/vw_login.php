@@ -1,5 +1,6 @@
-<?php lib\factory\FactoryJS::js('md5')?>
-<?php lib\factory\FactoryJS::js('Login')?>
+<?php use lib\Call;?>
+<?php Call::js('md5')?>
+<?php Call::js('Login')?>
 <div>
     <div id="lContainer">
         <form action="?mod=Login&act=logar" method="POST" name="fmLogin">

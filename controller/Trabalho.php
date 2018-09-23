@@ -1,6 +1,6 @@
 <?php
     namespace controller;
-    use lib\Formulario;
+    use lib\PhpClipboard;
     use lib\Call;
 
     class Trabalho
@@ -14,12 +14,12 @@
         {
             $modulo = 2;
 
-            $frm = new Formulario($modulo);
+            $frm = new PhpClipboard($modulo);
 
             $dados = array(
                 "title" => "Tela Principal",
                 "linkCss" => "dashboard",
-                "campos" => $frm->getForms(1)
+                "form" => $frm->getForms(1)
              );
 
             Call::view('vw_addTrabalho', $dados);

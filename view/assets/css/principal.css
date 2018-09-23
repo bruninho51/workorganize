@@ -75,3 +75,51 @@ body{
 .submenu{
     display: none;
 }
+
+/*ESTILO DOS BOTÕES E INPUT TEXT DO SITE*/
+
+.input-workorganize{
+    height: 28px;
+    padding-left: 10px;
+    border-radius: 7px;
+    border: 1px solid #fff;
+    outline: none;
+}
+.input-workorganize:focus{
+    border: 2px solid rgb(175, 221, 252);
+}
+.btn-200px-workorganize{
+    background-color: cornflowerblue;
+    border-radius: 10px;
+    width: 200px;
+    height: 20px;
+    border: 1px solid #fff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-workorganize{
+    background-color: cornflowerblue;
+    border-radius: 10px;
+    padding: 0px 8px 0px 8px;
+    height: 20px;
+    border: 1px solid #fff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+.btn-100-workorganize{
+    background-color: cornflowerblue;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    height: 20px;
+    border: 1px solid #fff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-workorganize:hover{
+    background-color: #5888dd;
+}

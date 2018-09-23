@@ -1,3 +1,3 @@
 <?php
 
-    echo $campos;
+    echo $form;

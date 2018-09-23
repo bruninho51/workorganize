@@ -8,12 +8,12 @@
 * AUTOR: BRUNO MENDES PIMENTA
 */
 namespace controller;
-use lib\Formulario;
+use lib\PhpClipboard;
 class Form
 {
     public function index()
     {
-        Formulario::process($_POST);
+        PhpClipboard::process($_POST);
     }   
 
 }

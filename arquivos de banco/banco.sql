@@ -9,6 +9,8 @@ CREATE TABLE tipoPerfil(
 );
 CREATE TABLE usuario(
     usuario VARCHAR(30),
+    nome VARCHAR(60) NOT NULL,
+    dataNasc DATE NOT NULL,
     senha VARCHAR(50) NOT NULL,
     ativo BOOLEAN NOT NULL,
     tipoPerfil INTEGER NOT NULL,
@@ -83,6 +85,7 @@ CREATE TABLE menu(
 CREATE TABLE campos(
 	idCampo INTEGER AUTO_INCREMENT,
     label VARCHAR(50) NOT NULL,
+    name VARCHAR(50) NOT NULL,
     tipo VARCHAR(25) NOT NULL,
     opt TEXT,
     descricao TEXT NOT NULL,
@@ -99,6 +102,8 @@ CREATE TABLE formulario(
 	idFormulario INTEGER AUTO_INCREMENT,
     titulo VARCHAR(50) NOT NULL,
     descricao TEXT NOT NULL,
+    method VARCHAR(50) NOT NULL,
+    process VARCHAR(50) NOT NULL,
     PRIMARY KEY(idFormulario)
 );
 CREATE TABLE camposFormulario(

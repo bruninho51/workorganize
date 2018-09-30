@@ -98,15 +98,11 @@ class PhpClipboardEntry
     
     public function setClass($class, $types)
     {
-        foreach ($types as $type) {
-            if (isset($this->class[$type])) {
-                $this->class[$type][] = $class;
-            } else {
-                throw new PhpClipboardException("7");
-            }
+        $idx = array_search($types, $this->tipo);
+        if ($idx != -1) {
+            $this->class[$this->tipo][] = $class;
         }
 
-        
         return $this;
         
     }
@@ -140,15 +136,20 @@ class PhpClipboardEntry
 
     public function multipleSelect($config = false)
     {
-        $this->addAttr("multiple", "multiple");
-        if (!is_array($config)) {
-            $config = array();
+        if ($this->type = 'select') {
+            $this->addAttr("multiple", "multiple");
+            if (!is_array($config)) {
+                $config = array();
+            }
+            $config = $this->injectMultipleSelectConfigDefault($config,true);
+            $jsMultipleSelect = "<script>$('#{$this->ramdomId}').multipleSelect({$config});</script>".PHP_EOL;
+            
+            $this->js[] = $jsMultipleSelect;
+            
         }
-        $config = $this->injectMultipleSelectConfigDefault($config,true);
-        $jsMultipleSelect = "<script>$('#{$this->ramdomId}').multipleSelect({$config});</script>".PHP_EOL;
-        
-        $this->js[] = $jsMultipleSelect;
+
         return $this;
+        
     }
 
     public function addAttr($keyAttr, $valueAttr)

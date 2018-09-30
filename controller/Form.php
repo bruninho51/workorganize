@@ -8,7 +8,7 @@
 * AUTOR: BRUNO MENDES PIMENTA
 */
 namespace controller;
-use lib\PhpClipboard;
+use lib\PhpClipboard\PhpClipboard;
 class Form
 {
     public function index()

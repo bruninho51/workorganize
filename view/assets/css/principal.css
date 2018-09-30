@@ -29,8 +29,8 @@ body{
     /*background-color: #0B1721;*/
     background-color: #1A204E;
     color: white;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     /*margin-bottom: 30px;*/
 }
 #navPrincipal ul{
@@ -80,10 +80,19 @@ body{
 
 .input-workorganize{
     height: 28px;
-    padding-left: 10px;
     border-radius: 7px;
     border: 1px solid #fff;
     outline: none;
+    width: 100%;
+}
+.ms-choice, .ms-parent{
+    border: 0px solid #fff !important;
+    border-radius: 7px !important;
+    flex-basis: 80%;
+}
+.ms-choice:focus{
+    border: 2px solid rgb(175, 221, 252) !important;
+    outline: none !important;
 }
 .input-workorganize:focus{
     border: 2px solid rgb(175, 221, 252);

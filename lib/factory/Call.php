@@ -53,17 +53,24 @@
             return $obj;
         }
 
-        public static function js($nomeArquivo){
+        public static function js($nomeArquivo, $returnVar = false){
             $env = config\env::getInstance();
             $tempo = time();
             $enderecoArquivo = "js/{$nomeArquivo}.js?{$tempo}";
-            echo "<script src='{$enderecoArquivo}'></script>".PHP_EOL;
+            if ($returnVar) {
+                return "<script src='{$enderecoArquivo}'></script>".PHP_EOL;
+            } else {
+                echo "<script src='{$enderecoArquivo}'></script>".PHP_EOL;
+            }
             
         }
 
-        public static function css($css){
+        public static function css($css, $tag = false){
             
             $linkCss = "view/assets/css/{$css}.css?" . time();
+            if ($tag) {
+                $linkCss = "<link rel='stylesheet' href='{$linkCss}'>";
+            }
             return $linkCss;
             
         }

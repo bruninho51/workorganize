@@ -1,6 +1,6 @@
 <?php
     namespace controller;
-    use lib\PhpClipboard;
+    use lib\PhpClipboard\PhpClipboard;
     use lib\Call;
 
     class Trabalho

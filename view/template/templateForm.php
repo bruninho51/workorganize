@@ -22,11 +22,11 @@
     .flex-end{
         justify-content: flex-end !important;
     }
-    .f_row label{
+    .f_row > label{
         flex-basis: 20%;
         color: #FFF;
     }
-    .f_row input:not([type="submit"]),select{
+    .f_row > input:not([type="submit"]),select{
         background-color: #FFF;
 
     }
@@ -53,7 +53,10 @@
         <?php foreach ($info['campos'] as $campo) :?>
             <div class="f_row flex-center">
                 <?php $campo->label()?>
-                <?php $campo->setClass("input-workorganize")->show()?>
+                <?php $campo
+                    ->setClass("input-workorganize", ["text", "date", "textarea", "select"])
+                    ->multipleSelect()
+                    ->show()?>
             </div>
         <?php endforeach?>
         <div class="f_row f-btn-container flex-end">

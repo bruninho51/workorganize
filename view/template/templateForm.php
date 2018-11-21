@@ -1,6 +1,6 @@
 <style>
     .f_container form{
-        width: 50%;
+        width: 90%;
         display: flex;
         justify-content: center;
         margin: 0 auto;
@@ -33,6 +33,8 @@
     .f_row input,select{
         flex-basis: 80%;
         margin: 0px 2px 0px 2px;
+    }
+    .f_row input[type='date'],select{
         cursor: pointer;
     }
     .f-btn-container{
@@ -47,7 +49,7 @@
 </style>
 <div class="f_container">
 
-    <form action="<?php echo '?mod=Form&act='?>" method="<?php echo $info['method']?>">
+    <form action="<?= '?mod=Form&act='?>" method="<?= $info['method']?>">
         <h1 id="tituloForm"><?php echo $info['nomeForm']?></h1>
         <input type="hidden" name="process" value="<?php echo $info['process']?>">
         <?php foreach ($info['campos'] as $campo) :?>
@@ -56,6 +58,7 @@
                 <?php $campo
                     ->setClass("input-workorganize", ["text", "date", "textarea", "select"])
                     ->multipleSelect()
+                    /*->errors($error)*/
                     ->show()?>
             </div>
         <?php endforeach?>
@@ -64,3 +67,4 @@
         </div>    
     </form>    
 </div>
+<?php echo '<pre>';print_r($errors)?>

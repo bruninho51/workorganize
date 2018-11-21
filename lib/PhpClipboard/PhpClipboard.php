@@ -49,7 +49,7 @@
 
             $resposta = array();
             while ($line = $formularios->fetch_assoc()) {
-                $resposta[] = $line;
+                $resposta[$line['idFormulario']] = $line;
             }
             $this->forms = $resposta;
 
@@ -76,24 +76,32 @@
             } else {
                 $campos = $this->getCamposFormulario($idFormulario);
                 $info['campos'] = $campos;
-                $info['method'] = $this->forms[$idFormulario-1]['method'];
-                $info['process'] = $this->forms[$idFormulario-1]['process'];
-                $info['nomeForm'] = $this->forms[$idFormulario-1]['titulo'];
+                $info['method'] = $this->forms[$idFormulario]['method'];
+                $info['process'] = $this->forms[$idFormulario]['process'];
+                $info['nomeForm'] = $this->forms[$idFormulario]['titulo'];
             }
 
             return $info;
         }
+        
+        public function errors()
+        {
+            //Responsável por capturar e guardar as mensagens de erro
+        }
 
-        public function getForms ($idFormulario = false, $template = false)
+        public function getForms ($idFormulario = false, $erros = false, $template = false)
         {
             $dadosForm = $this->getDadosForms($idFormulario);
             if ($idFormulario === false) {
 
             }else {
-                    $dados = array(
-                    "nomeForm" => "none",
-                    "info" => $dadosForm
+                $dados = array(
+                  "nomeForm" => "none",
+                  "info" => $dadosForm,
                 );
+                
+                $dados["errors"] = $erros;
+                    
                 ob_start();
                 if ($template === false) {
                     Call::view("template/templateForm", $dados, null);

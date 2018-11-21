@@ -12,8 +12,8 @@ use model\DB;
 use lib\Call;
 class PhpClipboardEntry
 {
-    private $ramdomId;
     private $idCampo;
+    private $idHTML;
     private $label;
     private $tipo;
     private $opt;
@@ -43,7 +43,6 @@ class PhpClipboardEntry
         $this->wrapInner = array('start' => '', 'end' => '');
         $this->js = array();
         $this->attrPerson = array();
-        $this->ramdomId = uniqid();
 
         foreach ($this->getTypeEntries() as $entry) {
             $this->class[$entry] = array();
@@ -126,7 +125,7 @@ class PhpClipboardEntry
         );
         if ($returnJson) {
             $retorno = json_encode($retorno);
-            //Remove os colchetes
+            //Remove os colchetes do json
             $retorno = substr_replace($retorno,"",-1,1);
             $retorno = substr_replace($retorno,"",0,1);
         }
@@ -142,7 +141,7 @@ class PhpClipboardEntry
                 $config = array();
             }
             $config = $this->injectMultipleSelectConfigDefault($config,true);
-            $jsMultipleSelect = "<script>$('#{$this->ramdomId}').multipleSelect({$config});</script>".PHP_EOL;
+            $jsMultipleSelect = "<script>$('#{$this->idHTML}').multipleSelect({$config});</script>".PHP_EOL;
             
             $this->js[] = $jsMultipleSelect;
             
@@ -174,13 +173,18 @@ class PhpClipboardEntry
             break;
         }
         
+        
+        
         echo $entry;
     }
 
     public function label()
     {
-        $label = "<label for='{$this->name}'>{$this->label}:</label>";
-
+        $label = false;
+        if ($this->tipo != 'hidden') {
+            $label = "<label for='{$this->name}'>{$this->label}:</label>";
+        }
+       
         echo $label;
     }
 
@@ -191,11 +195,11 @@ class PhpClipboardEntry
             $class = implode(' ', $this->class[$this->tipo]);
         }
         
-        $entry = "<input name='{$this->name}' class='{$class}' type='{$this->tipo}'>";
+        $entry = "<input name='{$this->name}' class='{$class}' id='{$this->idHTML}' type='{$this->tipo}'>";
 
         return $entry;
     }
-
+    
     private function select()
     {
         $db = DB::rescue();
@@ -230,7 +234,7 @@ HEREDOC;
         
         $entry = <<< HEREDOC
             {$this->wrap['start']}
-                <select name='{$this->name}' id='{$this->ramdomId}' class='{$class}' $attrPerson>
+                <select name='{$this->name}' id='{$this->idHTML}' class='{$class}' $attrPerson>
                     {$this->wrapInner['start']}
                         {$optString}
                     {$this->wrapInner['end']}
@@ -304,6 +308,9 @@ HEREDOC;
         }
         if (in_array("name", $propertyOfClass)) {
             $this->name = $campo['name'];
+        }
+        if (in_array("idHTML", $propertyOfClass)) {
+            $this->idHTML = $campo['idHTML'];
         }
 
         return true;

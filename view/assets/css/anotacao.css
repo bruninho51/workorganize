@@ -1,0 +1,28 @@
+.trabalho-list{
+    width: 100%;
+    min-height: 300px;
+    background-color: white;
+    text-align: center;
+}
+.anotacao-form{
+    width: 50%;
+}
+.trabalho-list th{
+    font-size: 22px;
+    background-color: rgb(26, 32, 78);
+    color: white;
+}
+.trabalho-list tbody{
+    font-size: 14px;
+}
+.rolagem{
+    width: 50%;
+    height: 300px;
+    background-color: white;
+    border: 1px dotted #000;
+}
+.radio-trabalho{
+    outline: none;
+    cursor: pointer;
+}
+

@@ -62,6 +62,14 @@
            
         }
         
+        public static function dateBrazilian($dateAmerican)
+        {
+            $arrDate = explode("-",$dateAmerican);
+            $dateBrazilian = "{$arrDate[2]}/{$arrDate[1]}/{$arrDate[0]}";
+            
+            return $dateBrazilian;
+        }
+        
     }
     
 ?>

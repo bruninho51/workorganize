@@ -8,7 +8,7 @@ namespace controller;
         public function index(&$respostaCtl = false)
         {
             $menu = Call::model('MenuDAO');
-            $dados = $menu->getMenus("1");
+            $dados = $menu->getMenus($_SESSION['tipoPerfil']);
             
             while( $menu = $dados->fetch_assoc() ){
                 
@@ -16,7 +16,17 @@ namespace controller;
                 
             }
             
-            $respostaCtl = $this->processaMenu(true);
+            $menusOrg = $this->processaMenu(true);
+            
+            foreach($menusOrg as $key => $menuPrincipal){
+                if (!isset($menuPrincipal['submenus'])) {
+                    unset($menusOrg[$key]);
+                    
+                }
+                
+            }
+            
+            $respostaCtl = $menusOrg;
            
         }
         

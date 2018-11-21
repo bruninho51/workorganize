@@ -18,7 +18,8 @@
             "controller\\" : "controller",
             "helper\\" : "helper",
             "model\\" : "model",
-            "interfaces\\" : "interfaces"
+            "interfaces\\" : "interfaces",
+            "middleware\\" : "middleware"
         }
     },
     "require-dev": {

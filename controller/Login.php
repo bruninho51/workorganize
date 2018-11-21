@@ -51,10 +51,12 @@
                     
                     session_start();
                     
+                    $_SESSION['usuario'] = $usuario;
+                    $_SESSION['tipoPerfil'] = $dadosUsuario['tipoPerfil'];
+                    
                     $dadosMenu = "";
                     Call::controller('Menu', 'index', false, $dadosMenu);
                     
-                    $_SESSION['usuario'] = $usuario;
                     $_SESSION['menu'] = serialize($dadosMenu);
                    
                     header("location: /{$env->config['nomeProjeto']}/?mod=Principal&act=");

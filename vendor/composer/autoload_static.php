@@ -18,6 +18,7 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         'm' => 
         array (
             'model\\' => 6,
+            'middleware\\' => 11,
         ),
         'l' => 
         array (
@@ -71,6 +72,10 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         'model\\' => 
         array (
             0 => __DIR__ . '/../..' . '/model',
+        ),
+        'middleware\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/middleware',
         ),
         'lib\\factory\\' => 
         array (
@@ -789,6 +794,7 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         'Symfony\\Polyfill\\Php72\\Php72' => __DIR__ . '/..' . '/symfony/polyfill-php72/Php72.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
         'config\\env' => __DIR__ . '/../..' . '/config/env.php',
+        'controller\\Anotacao' => __DIR__ . '/../..' . '/controller/Anotacao.php',
         'controller\\Form' => __DIR__ . '/../..' . '/controller/Form.php',
         'controller\\Login' => __DIR__ . '/../..' . '/controller/Login.php',
         'controller\\Menu' => __DIR__ . '/../..' . '/controller/Menu.php',
@@ -807,6 +813,7 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         'lib\\factory\\FactoryJS' => __DIR__ . '/../..' . '/lib/factory/FactoryJS.php',
         'lib\\factory\\FactoryModel' => __DIR__ . '/../..' . '/lib/factory/FactoryModel.php',
         'lib\\factory\\FactoryView' => __DIR__ . '/../..' . '/lib/factory/FactoryView.php',
+        'middleware\\Middleware' => __DIR__ . '/../..' . '/middleware/Middleware.php',
         'model\\AbstractModel' => __DIR__ . '/../..' . '/model/AbstractModel.php',
         'model\\CRUD' => __DIR__ . '/../..' . '/model/CRUD.php',
         'model\\DB' => __DIR__ . '/../..' . '/model/DB.php',

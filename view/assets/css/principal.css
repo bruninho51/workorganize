@@ -8,6 +8,13 @@
 body{
     background-color: #F6FAEF;
 }
+.pcontainer{
+    margin: 10px;
+}
+.prow{
+    display: flex;
+    flex-wrap: wrap;
+}
 .tituloPrincipal{
     
     background-color: #1A204E;

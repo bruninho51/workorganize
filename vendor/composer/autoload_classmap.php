@@ -641,7 +641,6 @@ return array(
     'lib\\factory\\FactoryJS' => $baseDir . '/lib/factory/FactoryJS.php',
     'lib\\factory\\FactoryModel' => $baseDir . '/lib/factory/FactoryModel.php',
     'lib\\factory\\FactoryView' => $baseDir . '/lib/factory/FactoryView.php',
-    'middleware\\Middleware' => $baseDir . '/middleware/Middleware.php',
     'model\\AbstractModel' => $baseDir . '/model/AbstractModel.php',
     'model\\CRUD' => $baseDir . '/model/CRUD.php',
     'model\\DB' => $baseDir . '/model/DB.php',

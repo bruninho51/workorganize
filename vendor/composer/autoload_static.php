@@ -18,7 +18,6 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         'm' => 
         array (
             'model\\' => 6,
-            'middleware\\' => 11,
         ),
         'l' => 
         array (
@@ -72,10 +71,6 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         'model\\' => 
         array (
             0 => __DIR__ . '/../..' . '/model',
-        ),
-        'middleware\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/middleware',
         ),
         'lib\\factory\\' => 
         array (
@@ -813,7 +808,6 @@ class ComposerStaticIniteba204878a11ecdc7e667192852c096d
         'lib\\factory\\FactoryJS' => __DIR__ . '/../..' . '/lib/factory/FactoryJS.php',
         'lib\\factory\\FactoryModel' => __DIR__ . '/../..' . '/lib/factory/FactoryModel.php',
         'lib\\factory\\FactoryView' => __DIR__ . '/../..' . '/lib/factory/FactoryView.php',
-        'middleware\\Middleware' => __DIR__ . '/../..' . '/middleware/Middleware.php',
         'model\\AbstractModel' => __DIR__ . '/../..' . '/model/AbstractModel.php',
         'model\\CRUD' => __DIR__ . '/../..' . '/model/CRUD.php',
         'model\\DB' => __DIR__ . '/../..' . '/model/DB.php',
